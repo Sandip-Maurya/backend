@@ -6,6 +6,8 @@ import sys
 
 def main():
     """Run administrative tasks."""
+    # Set default settings module based on environment
+    # Use 'dolce_backend.settings' which will load development or production based on DJANGO_ENV
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dolce_backend.settings')
     try:
         from django.core.management import execute_from_command_line
