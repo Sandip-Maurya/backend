@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'dolce_backend.middleware.TrailingSlashMiddleware',
 ]
 
 ROOT_URLCONF = 'dolce_backend.urls'
@@ -199,4 +200,9 @@ CSRF_COOKIE_SAMESITE = 'Lax'  # Works with Vite proxy (same-origin)
 CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
 CSRF_COOKIE_HTTPONLY = False  # Must be False to read from JavaScript
 CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
+
+# URL trailing slash handling
+# Set to False to prevent Django's default redirect behavior
+# Our custom TrailingSlashMiddleware handles normalization instead
+APPEND_SLASH = False
 
