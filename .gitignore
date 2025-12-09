@@ -53,3 +53,7 @@ Thumbs.db
 
 # ignore create_env_example.py
 create_env_example.py
+
+# Ignore db
+*.sqlite3
+*.db 
