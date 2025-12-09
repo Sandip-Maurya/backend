@@ -9,7 +9,8 @@ Django REST Framework backend for the Dolce Fiore e-commerce platform.
 - **Shopping Cart** - Add, update, remove items with quantity management
 - **Order Management** - Create orders with customer details and shipping information
 - **Payment Integration** - Payment order creation (ready for Razorpay/Stripe)
-- **Admin Dashboard** - User-friendly Django Admin for managing products and orders
+- **Content Management** - Dynamic content for home page sections (Sustainable Gifting)
+- **Admin Dashboard** - User-friendly Django Admin for managing products, orders, and content
 - **API Documentation** - Interactive Swagger UI documentation
 
 ## Technology Stack
@@ -98,6 +99,7 @@ Use the superuser credentials created earlier to log in.
 - **Cart**: View user carts and cart items
 - **Payments**: Track payment orders
 - **Users**: Manage user accounts
+- **Content**: Manage sustainable gifting items for home page (images, titles, descriptions)
 
 ## API Endpoints
 
@@ -123,6 +125,9 @@ Use the superuser credentials created earlier to log in.
 ### Payments
 - `POST /api/payments/create-order` - Create payment order
 
+### Content
+- `GET /api/content/sustainable-gifting/` - Get sustainable gifting items for home page
+
 ## Project Structure
 
 ```
@@ -132,7 +137,8 @@ backend/
 │   ├── products/       # Product catalog
 │   ├── cart/           # Shopping cart
 │   ├── orders/         # Order management
-│   └── payments/       # Payment processing
+│   ├── payments/       # Payment processing
+│   └── content/        # Content management (home page sections)
 ├── dolce_backend/      # Django project settings
 ├── manage.py
 ├── pyproject.toml      # uv project configuration
