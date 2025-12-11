@@ -9,7 +9,7 @@ Django REST Framework backend for the Dolce Fiore e-commerce platform.
 - **Shopping Cart** - Add, update, remove items with quantity management
 - **Order Management** - Create orders with customer details and shipping information
 - **Payment Integration** - Payment order creation (ready for Razorpay/Stripe)
-- **Content Management** - Dynamic content for home page sections (Sustainable Gifting)
+- **Content Management** - Dynamic content for home page sections (Sustainable Gifting, Testimonials) and About Us page (About Us, Our Story, Our Commitment, Photo Gallery, Blogs)
 - **Admin Dashboard** - User-friendly Django Admin for managing products, orders, and content
 - **API Documentation** - Interactive Swagger UI documentation
 
@@ -99,7 +99,7 @@ Use the superuser credentials created earlier to log in.
 - **Cart**: View user carts and cart items
 - **Payments**: Track payment orders
 - **Users**: Manage user accounts
-- **Content**: Manage sustainable gifting items for home page (images, titles, descriptions)
+- **Content**: Manage sustainable gifting items, testimonials (text and video) for home page, and About Us page content (About Us, Our Story, Our Commitment sections, Photo Gallery items, and Blog posts)
 
 ## API Endpoints
 
@@ -127,6 +127,13 @@ Use the superuser credentials created earlier to log in.
 
 ### Content
 - `GET /api/content/sustainable-gifting/` - Get sustainable gifting items for home page
+- `GET /api/content/testimonials/text/` - Get text-based testimonials for home page
+- `GET /api/content/testimonials/video/` - Get video-based testimonials for home page
+- `GET /api/content/about-us/` - Get About Us section (with default fallback if none exists)
+- `GET /api/content/our-story/` - Get Our Story section (with default fallback if none exists)
+- `GET /api/content/our-commitment/` - Get Our Commitment sections
+- `GET /api/content/photo-gallery/` - Get photo gallery items
+- `GET /api/content/blogs/` - Get blog posts (ordered by published date, newest first)
 
 ## Project Structure
 
@@ -138,7 +145,7 @@ backend/
 │   ├── cart/           # Shopping cart
 │   ├── orders/         # Order management
 │   ├── payments/       # Payment processing
-│   └── content/        # Content management (home page sections)
+│   └── content/        # Content management (home page sections: sustainable gifting, testimonials; About Us page: about us, our story, our commitment, photo gallery, blogs)
 ├── dolce_backend/      # Django project settings
 ├── manage.py
 ├── pyproject.toml      # uv project configuration
