@@ -60,4 +60,4 @@ create_env_example.py
 
 # ignore .sh files
 
-*.sh 
+*.sh
