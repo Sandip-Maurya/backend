@@ -57,3 +57,7 @@ create_env_example.py
 # Ignore db
 *.sqlite3
 *.db 
+
+# ignore .sh files
+
+*.sh 
